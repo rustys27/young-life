@@ -480,4 +480,3 @@ input.getElementsByClassName('ttpict')[0].setAttribute('data-tooltip', instructi
 }
 }	
 });
-
