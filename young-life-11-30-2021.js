@@ -466,7 +466,7 @@ $(document).on("knack-form-submit.view_8267", (event, view, record) => {
 
 // Convert Instruction to Tooltips
 // Instructions Fields Converted to Tooltips (Refer to CSS Page for Styling Tooltips)	
-$(document).on('knack-scene-render.any', function (event, scene) {
+$(document).on('nack-scene-render.scene_4828', function (event, scene) {
 					
 let inputs = document.getElementsByClassName('control');
 let i = 0, l = inputs.length;
