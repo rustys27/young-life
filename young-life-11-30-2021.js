@@ -464,4 +464,20 @@ $(document).on("knack-form-submit.view_8267", (event, view, record) => {
   getRecords("scene_4488", "view_8085", "field_3051");
 });*/
 
+// Convert Instruction to Tooltips
+// Instructions Fields Converted to Tooltips (Refer to CSS Page for Styling Tooltips)	
+$(document).on('knack-scene-render.any', function (event, scene) {
+					
+let inputs = document.getElementsByClassName('control');
+let i = 0, l = inputs.length;
+for (i; i < l; i++) {
+let input = inputs[i];
+let instruction = input.getElementsByClassName('kn-instructions')[0];
+if (instruction && instruction.innerHTML != "") {
+input.getElementsByClassName('kn-label')[0].style.position = "relative";
+input.getElementsByClassName('label kn-label')[0].innerHTML += '<span class="ttpict"> <i class="fa fa-question-circle" style="padding:0 .25em; font-size: 1.1em"</i> </span>';
+input.getElementsByClassName('ttpict')[0].setAttribute('data-tooltip', instruction.innerHTML);
+}
+}	
+});
 
