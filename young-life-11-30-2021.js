@@ -254,7 +254,7 @@ const getLeaders =  async (view) => {
   //   return res.json()
   // }).then(data => data.records);
 
-  // console.log({leaderData})
+  console.log({leaderData})
   leaders = leaderData;
 
   return leaderData;
