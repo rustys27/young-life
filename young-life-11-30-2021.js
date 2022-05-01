@@ -254,7 +254,7 @@ const getLeaders =  async (view) => {
   //   return res.json()
   // }).then(data => data.records);
 
-  console.log({leaderData})
+  // console.log({leaderData})
   leaders = leaderData;
 
   return leaderData;
@@ -387,54 +387,6 @@ $(document).on('knack-scene-render.scene_4830', async () => {
     await updateCategories();
 })
 // end of code to copy for 9box
-
-// start of code to replicate per view for 9box
-$(document).on('knack-scene-render.scene_5220', async () => {
-    leaders = [];
-    categories = [
-        {
-          name: "Next_Level_Leader",
-          leaders: []
-        },
-        {
-          name: "Emerging_Leader",
-          leaders: []
-        },
-        {
-          name: "Future_Leader",
-          leaders: []
-        },
-        {
-          name: "Expert_Competence",
-          leaders: []
-        },
-        {
-          name: "Key_Player",
-          leaders: []
-        },
-        {
-          name: "Valued_Competence",
-          leaders: []
-        },
-        {
-          name: "Misaligned_Competence",
-          leaders: []
-        },
-        {
-          name: "Inconsistent_Competence",
-          leaders: []
-        },
-        {
-          name: "Limited_Competence",
-          leaders: []
-        },
-      ];
-    await getLeaders("view_9450");
-    await sortLeaders();
-    await updateCategories();
-})
-// end of code to copy for 9box
-
 
 //function to populate current records
 const getRecords = async (scene, view, field) => {
