@@ -541,17 +541,7 @@ const populateId = (scene, view, field, recordId) => {
 };
 
 //add new 360 assessment set record id
-$(document).on("knack-form-submit.view_8440", (event, view, record) => {
-  populateId("scene_4807", "view_8741", "field_3051", record.id);
-});
-
-//add new 360 assessment set record id
 $(document).on("knack-form-submit.view_8084", (event, view, record) => {
-  populateId("scene_4807", "view_8741", "field_3051", record.id);
-});
-
-//add new 360 assessment set record id
-$(document).on("knack-form-submit.view_8267", (event, view, record) => {
   populateId("scene_4807", "view_8741", "field_3051", record.id);
 });
 
