@@ -566,3 +566,36 @@ input.getElementsByClassName('ttpict')[0].setAttribute('data-tooltip', instructi
 }
 }	
 });
+
+// Show password on click of eye icon on login and registration forms
+// (Note: Uses view-render.any because view-render.form fails to fire on the login form)
+$(document).on('knack-view-render.any', function(event, view, data) {
+  
+  const hasPasswordInput = $('input[name="password"]').length
+
+  if (hasPasswordInput) {
+    showHidePassword()
+  }
+
+  function showHidePassword() {
+    const $pw = $('input[name="password"]')
+
+    // add the icon
+    const iconID = 'eye-password'
+    const icon = `
+      <a id="${iconID}" href="javascript:void(0)" style="position:absolute;right:10px;top:8px;">
+        <i class="fa fa-eye"></i> 
+      </a>
+    `
+    if ($('#' + iconID).length === 0) {
+      $pw.after(icon)
+    }
+
+    // show/hide password on click of icon
+    $('#' + iconID).on('click', function() {
+      $pw.attr('type') === 'password' ? $pw[0].setAttribute('type', 'text') : $pw[0].setAttribute('type', 'password')
+    })
+  }
+
+})
+
